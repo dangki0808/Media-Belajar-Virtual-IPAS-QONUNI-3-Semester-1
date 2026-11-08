@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latihan Semester · IPAS Qonuni 3</title><link rel="stylesheet" href="../shared/ipas.css"></head>
+<body>
+<header class="top"><div class="wrap"><a class="back" href="../index.html">← Beranda</a><div class="brand">📚 Latihan Semester <small>· IPAS Qonuni 3</small></div></div></header>
+<div class="wrap">
+<section class="hero"><span class="chip">Persiapan Evaluasi Akhir Semester</span><h1>📚 Latihan Semester</h1><p class="sub">20 soal acak (pilihan ganda dan benar-salah) dari semua pertemuan. Pilih bab, lalu kerjakan. Setiap kali dibuka, soalnya berbeda.</p></section>
+<div class="card"><h2>Pilih bab</h2><div class="row" id="bb"></div></div>
+<div class="card"><div id="lw"></div></div>
+</div>
+<footer>Virtual IPAS Lab · Qonuni 3 · Semester 1</footer>
+<script src="../shared/data1.js"></script><script src="../shared/data2.js"></script><script src="../shared/ipas.js"></script>
+<script>
+const {store,esc,shuf,BAB,$,$$,say}=IPAS; let bab=0;
+const B=[[0,'✨ Semua bab']].concat([1,2,3,4].map(b=>[b,BAB[b][1]+' Bab '+b]));
+$('#bb').innerHTML=B.map(b=>`<button class="btn ${b[0]===0?'':'ghost'}" data-b="${b[0]}">${b[1]}</button>`).join('');
+$$('#bb button').forEach(x=>x.onclick=()=>{ bab=+x.dataset.b; $$('#bb button').forEach(y=>y.className='btn '+(y===x?'':'ghost')); start(); });
+function bank(){ const Q=[]; PTM.filter(p=>!bab||p.bab===bab).forEach(p=>{ p.quiz.pg.forEach(q=>Q.push({q:q.q,o:q.o,ex:q.ex,src:'P'+p.n+' · '+p.t,bab:p.bab})); p.quiz.bs.forEach(b=>Q.push({q:'Benar atau salah? '+b[0],o:b[1]?['Benar','Salah']:['Salah','Benar'],ex:b[2]||'',src:'P'+p.n+' · '+p.t,bab:p.bab,fixed:1})); });
+  const seen=new Set(); return Q.filter(q=>{ if(seen.has(q.q))return false; seen.add(q.q); return true; }); }
+function start(){ const el=$('#lw'); const Q=shuf(bank()).slice(0,20).map(q=>({...q,ord:q.fixed?[0,1].sort((a,b)=>q.o[a]==='Benar'?-1:1):shuf(q.o.map((_,i)=>i))})); let i=0, sc=0;
+  const show=()=>{ if(i>=Q.length){ const s=Math.round(sc/Q.length*100); if(!bab){ const b=store.get('lat'); if(b==null||s>b) store.set('lat',s); }
+      el.innerHTML=`<div class="stage" style="text-align:center"><div class="huge">${s>=85?'🏆':s>=70?'🌟':'🌱'}</div><div class="big">Nilai ${s}</div><p>${sc} dari ${Q.length} benar. ${s>=85?'MasyaAllah, siap menghadapi evaluasi!':s>=70?'Alhamdulillah, bagus. Ulangi pertemuan yang soalnya salah.':'Semangat! Baca lagi Ayo Memahami di setiap pertemuan.'}</p><button class="btn" id="ag">🔁 Paket soal baru</button></div>`; $('#ag').onclick=start; return; }
+    const q=Q[i]; el.innerHTML=`<div class="row" style="justify-content:space-between"><b>Soal ${i+1} / ${Q.length}</b><span class="score">⭐ ${sc}</span></div><div class="prog"><i style="width:${i/Q.length*100}%"></i></div>
+     <p class="muted" style="margin:0">${BAB[q.bab][1]} ${esc(q.src)}</p><p class="big" style="font-size:1.15rem">${esc(q.q)} ${IPAS.sp(q.q)}</p><div class="opts">${q.ord.map(k=>`<button class="opt" data-k="${k}">${esc(q.o[k])}</button>`).join('')}</div><div id="f"></div>`;
+    $$('.opt',el).forEach(b=>b.onclick=()=>{ const ok=+b.dataset.k===0; if(ok)sc++; $$('.opt',el).forEach(x=>{x.disabled=true; if(+x.dataset.k===0)x.classList.add('good');}); if(!ok)b.classList.add('no');
+      $('#f').innerHTML=`<div class="fb ${ok?'ok':'no'}">${ok?'✅ Tepat!':'❌ Jawaban: '+esc(q.o[0])} <span class="muted">${esc(q.ex||'')}</span></div><button class="btn" id="nx">${i+1<Q.length?'Lanjut →':'Lihat nilai'}</button>`; $('#nx').onclick=()=>{i++;show();}; }); };
+  show(); }
+start();
+</script>
+</body></html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Virtual IPAS Lab · Qonuni 3 · Semester 1</title><link rel="stylesheet" href="shared/ipas.css">
+<style>
+.hub{display:grid;grid-template-columns:1.35fr 1fr;gap:22px;align-items:center;padding:26px 0 6px}
+.hub h1{font-size:clamp(2rem,5.4vw,3.2rem);margin:.25em 0}
+.hub h1 em{font-style:normal;color:var(--green)}
+.stat .n{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat .n div{background:var(--gold-soft);border-radius:16px;padding:10px 12px}
+.stat b{display:block;font-size:1.7rem;line-height:1.1}.stat small{color:var(--muted);font-weight:700}
+.babh{display:flex;align-items:center;gap:12px;margin:26px 0 8px}
+.babh .bi{font-size:2.2rem;width:58px;height:58px;display:grid;place-items:center;border-radius:18px;color:#fff}
+.babh h2{margin:0}.babh small{color:var(--muted);font-weight:700}
+.ptms{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:12px}
+.pt{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:var(--shadow);transition:transform .15s;position:relative;overflow:hidden}
+.pt:hover{transform:translateY(-4px)}
+.pt::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--bc)}
+.pt .ic{font-size:2rem}.pt .no{font-weight:900;font-size:.78rem;color:var(--bc);letter-spacing:.04em}
+.pt h3{margin:.15em 0 .3em;font-size:1.08rem}.pt p{margin:0;color:var(--muted);font-size:.88rem}
+.pt .bar{height:8px;background:var(--line);border-radius:999px;margin-top:10px;overflow:hidden}.pt .bar i{display:block;height:100%;background:var(--bc)}
+.pt .ev{position:absolute;right:10px;top:10px}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:16px}
+.feat a{text-decoration:none;color:var(--ink);border-radius:20px;padding:16px;border:1px solid var(--line);box-shadow:var(--shadow);display:block;background:var(--card)}
+.feat .ic{font-size:2.2rem}
+@media (max-width:820px){.hub{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="wrap">
+<section class="hub"><div><span class="chip">Kuttab Raudhah Nabawiyah · IPAS · Qonuni 3 (setara Kelas 5)</span>
+ <h1>Virtual IPAS Lab<br><em>Semester 1</em></h1>
+ <p class="sub">16 pertemuan sesuai RPP: letak Indonesia, potensi daerah, ekosistem, dan air. Setiap pertemuan dibuka dengan <b>Mari Mengingat Allah</b>, lalu Ayo Memahami, lab simulasi, latihan, kuis, dan tugas rumah. Semua berjalan tanpa internet.</p>
+ <div class="row"><a class="btn" href="pertemuan/p01.html">▶️ Mulai Pertemuan 1</a><a class="btn gold" href="latihan/index.html">📚 Latihan Semester</a><a class="btn ghost" href="#guru">📘 Panduan Guru</a></div></div>
+ <div class="card stat"><span class="chip">Ringkasan di perangkat ini</span><div class="n" style="margin-top:12px"><div><b>16</b><small>pertemuan</small></div><div><b id="nd">0</b><small>kuis selesai</small></div><div><b id="na">–</b><small>rata-rata nilai</small></div><div><b id="nl">–</b><small>latihan semester</small></div></div></div>
+</section>
+<div class="card ayat"><div class="lbl">🌙 Pembuka</div><blockquote>“Sesungguhnya dalam penciptaan langit dan bumi, dan pergantian malam dan siang terdapat tanda-tanda (kebesaran Allah) bagi orang yang berakal.”</blockquote><cite>QS. Ali ‘Imran (3): 190</cite><p>Belajar IPAS adalah cara mengenal ciptaan Allah: negeri kepulauan kita, kekayaan alamnya, makhluk hidup yang saling membutuhkan, dan air yang terus berputar.</p></div>
+<div id="babs"></div>
+<div class="feat">
+ <a href="latihan/index.html" style="background:var(--gold-soft)"><span class="ic">📚</span><h3>Latihan Semester</h3><p class="muted">Soal acak dari semua pertemuan, bisa dipilih per bab. Cocok untuk persiapan Evaluasi Akhir Semester.</p></a>
+ <a href="pertemuan/p16.html#lab"><span class="ic">🏁</span><h3>Kuis Beregu Akhir Semester</h3><p class="muted">Papan skor 4 regu untuk Pertemuan 16. Soal [Penghubung] lintas bab bernilai 2 poin, lalu Lembar Refleksi Semester.</p></a>
+ <a href="#guru"><span class="ic">📘</span><h3>Panduan Guru</h3><p class="muted">Alur 60 menit, cara memakai lab, dan penilaian.</p></a>
+</div>
+<div class="card" id="guru"><h2>📘 Panduan Guru</h2>
+ <ol>
+  <li><b>Membuka:</b> ekstrak ZIP, lalu buka <b>index.html</b> di browser (Chrome disarankan). Tidak perlu internet. Bisa ditampilkan dengan proyektor atau dipakai santri bergiliran di tablet/laptop.</li>
+  <li><b>Alur satu pertemuan (60 menit), mengikuti RPP:</b><br>
+   <b>Pembukaan (10′)</b> — salam, doa, baca bersama kartu <i>Mari Mengingat Allah</i> (tombol 🔊 membacakan), apersepsi, bahas tugas rumah sebelumnya.<br>
+   <b>Inti (40′)</b> — tab <i>Ayo Memahami</i> (penjelasan, Tahukah Kamu, bagan alir) → tab <i>Lab</i> (simulasi/percobaan virtual, bisa didemonstrasikan di depan kelas lalu dilanjutkan percobaan nyata) → tab <i>Latihan</i> (permainan pengelompokan/menjodohkan).<br>
+   <b>Penutup (10′)</b> — tab <i>Kuis</i> (A pilihan ganda, B benar-salah, C menjodohkan dinilai otomatis; D uraian dinilai guru), refleksi, doa. Tab <i>Tugas Rumah</i> bisa dicetak.</li>
+  <li><b>Pertemuan 4 dan 8</b> adalah Review Bab 1 dan Bab 2 dengan proyek (peta Indonesia dan poster Profil Daerahku). <b>Pertemuan 16</b> adalah Review Akhir Semester: kuis beregu 4 tim (tab <i>Lab</i>) dan Lembar Refleksi Semester (tab <i>Latihan</i>), sesuai RPP tanpa tes tertulis; kuis individu tetap tersedia bila diperlukan.</li>
+  <li><b>Lab virtual</b> melengkapi kegiatan di RPP: puzzle peta, simulasi angin muson, kartu kasus, pembuat poster, permainan kartu rantai makanan, kartu skenario simbiosis, simulasi keseimbangan sawah, simulasi siklus air, dan kalkulator hemat air. Percobaan nyata di LKPD (misalnya percobaan penguapan) tetap dilakukan.</li>
+  <li><b>Adab gambar:</b> seluruh ilustrasi memakai benda, alam, peta, dan simbol, tanpa gambar orang atau hewan. Hewan ditampilkan sebagai <b>kartu kata</b> (🏷️), sama seperti di file materi.</li>
+  <li><b>Peta</b> di aplikasi ini skematis (tidak berskala) untuk latihan letak; gunakan atlas untuk detail.</li>
+  <li><b>Nilai</b> dan isian (poster, refleksi) tersimpan di perangkat masing-masing.</li>
+ </ol>
+ <p class="muted">Sumber: RPP IPAS Qonuni 3 Semester 1 2026 dan file Materi IPAS Qonuni 3 P01–P16 (folder ModulAjar Q34 IPAS smt 1) di folder <i>RPP 2026</i>.</p>
+ <button class="btn ghost" id="rs">Hapus semua nilai di perangkat ini</button></div>
+</div>
+<footer>Virtual IPAS Lab · Qonuni 3 · Semester 1 · Kuttab Raudhah Nabawiyah</footer>
+<script src="shared/data1.js"></script><script src="shared/data2.js"></script><script src="shared/ipas.js"></script>
+<script>
+const {store,esc,BAB,$}=IPAS; const COL={1:'#d9731a',2:'#2f63b0',3:'#2a8a52',4:'#11849a'};
+let d=0,sum=0;
+document.getElementById('babs').innerHTML=[1,2,3,4].map(b=>{ const L=PTM.filter(p=>p.bab===b);
+  return `<div class="babh"><span class="bi" style="background:${COL[b]}">${BAB[b][1]}</span><div><small>BAB ${b} · Pertemuan ${L[0].n}–${L[L.length-1].n}</small><h2>${esc(BAB[b][0])}</h2></div></div><div class="ptms" style="--bc:${COL[b]}">${L.map(p=>{ const s=store.get('p'+p.n); if(s!=null){d++;sum+=s;}
+   return `<a class="pt" href="pertemuan/p${String(p.n).padStart(2,'0')}.html">${p.ev?'<span class="chip gold ev">Review</span>':''}<div class="ic">${p.ic}</div><div class="no">PERTEMUAN ${p.n}</div><h3>${esc(p.t)}</h3><p>🔬 ${esc(p.lab.t)}</p><p>${s!=null?'⭐ Nilai kuis terbaik: '+s:'Belum mengerjakan kuis'}</p><div class="bar"><i style="width:${s||0}%"></i></div></a>`; }).join('')}</div>`; }).join('');
+$('#nd').textContent=d; $('#na').textContent=d?Math.round(sum/d):'–'; const l=store.get('lat'); $('#nl').textContent=l!=null?l:'–';
+$('#rs').onclick=()=>{ if(confirm('Hapus semua nilai dan catatan di perangkat ini?')){ try{ Object.keys(localStorage).filter(k=>k.startsWith('ipasq3s1:')).forEach(k=>localStorage.removeItem(k)); }catch(e){} location.reload(); } };
+</script>
+</body></html>
